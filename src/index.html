@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wikitext2markdown</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>wikitext2markdown</h1>
+      <p>convert mediawiki markup to markdown. because why not</p>
+    </header>
+    <main>
+      <div class="panels">
+        <div class="panel panel-input">
+          <div class="toolbar">
+            <div class="toolbar-left">
+              <label for="wikitext-input">wikitext</label>
+            </div>
+            <div class="toolbar-right">
+              <div class="toggle-container">
+                <span class="toggle-label active" id="inputRawLabel">raw</span>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="inputRenderToggle">
+                  <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label" id="inputRenderedLabel">rendered</span>
+              </div>
+            </div>
+          </div>
+          <textarea id="wikitext-input" placeholder="paste the wikitext here...">== Heading Level 2 ==
+=== Heading Level 3 ===
+
+'''Bold text''' and ''italic text'' and '''''both'''''
+
+Internal link: [[Main Page]]
+Aliased link: [[Page|display text]]
+External link: [https://example.com Example]
+
+* List item one
+* List item two
+* List item three
+
+# Ordered item
+# Ordered item
+
+----
+
+Inline code: <code>console.log("hello")</code>
+
+Code block:
+<code>function greet(name) {
+  return "Hello, " + name;
+}</code></textarea>
+          <div id="wikitext-rendered" class="output-area rendered" style="display: none;"></div>
+          <div class="toolbar-left" style="margin-top: 0.5rem;">
+            <span id="charCount" style="font-size: 0.75rem; color: var(--muted);">0 lines · 0 words</span>
+          </div>
+        </div>
+        <div class="panel panel-output">
+          <div class="toolbar">
+            <div class="toolbar-left">
+              <label for="output">markdown</label>
+            </div>
+            <div class="toolbar-right">
+              <div class="toggle-container">
+                <span class="toggle-label active" id="rawLabel">raw</span>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="renderToggle">
+                  <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label" id="renderedLabel">rendered</span>
+              </div>
+            </div>
+          </div>
+          <div id="output" class="output-area"></div>
+          <div class="toolbar" style="margin-top: 0.5rem;">
+            <div class="toolbar-left"></div>
+            <div class="toolbar-right">
+              <button id="copyBtn">copy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+	    <p>made by someguythat-thinkswithportals :)  &bull; press ctrl + enter to convert (probably) &bull; <a href="https://github.com/someguythat-thinkswithportals/wikitext2markdown">the source code</a></p>
+    </footer>
+  </div>
+  <script src="js/patterns.js"></script>
+  <script src="js/converter.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

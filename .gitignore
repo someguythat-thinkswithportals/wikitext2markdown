@@ -1,0 +1,7 @@
+# i think thats it for the file
+node_modules/
+.DS_Store
+.vscode/
+.idea/
+*.log
+.env
